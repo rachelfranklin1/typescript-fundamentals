@@ -2,13 +2,14 @@
 
 /**
  * (1) x is a string, b/c we’ve initialized it
+ * -- x implicitly inherits the type of it's value
  */
-// let x = "hello world";
+let x = "hello world";
 
 /**
- * (2) reassignment is fine
+ * (2) x is let variable so as usual, reassignment is fine
  */
-// x = "hello mars";
+x = "hello mars";
 
 /**
  * (3) but if we try to change type
@@ -18,8 +19,13 @@
 /**
  * (4) let's look at const. The type is literally 'hello world'
  */
-// const y = "hello world";
-
+const y = "hello world"; // y is literally typed to "hello world"
+const obj = {
+  name: "murphy",
+  age: 2.5,
+};
+// obj is immutable as it's a const so i can't add properties but it looks like i can delete them?
+// can I delete properties?
 /**
  * This is called a 'string literal type'. y can never be reassigned since it's a const,
  * so we can regard it as only ever holding a value that's literally the string 'hello world'
@@ -29,21 +35,21 @@
 /**
  * (5) sometimes we need to declare a variable w/o initializing it
  */
-// let z;
-// z = 41;
-// z = "abc"; // (6) oh no! This isn't good
+let z;
+z = 41;
+z = "abc"; // (6) oh no! This isn't good
 
 /**
  * If we look at the type of z, it's `any`. This is the most flexible type
- * in TypeScript (think of it like a JavaScript `let`)
+ * in TypeScript (think of it like a JavaScript `let`) -- its a wild card.
  */
 
 /**
  * (7) we could improve this situation by providing a type annotation
  * when we declare our variable
  */
-// let zz: number;
-// zz = 41;
+let zz: number; // we should set the type, even if we haven't yet initalised it with a value
+zz = 41;
 // zz = "abc"; // 🚨 ERROR Type '"abc"' is not assignable to type 'number'.
 
 //== SIMPLE ARRAYS ==//
