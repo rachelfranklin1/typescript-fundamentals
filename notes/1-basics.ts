@@ -90,7 +90,7 @@ let rachel: "Rachel"; // you can use string literal types on let vars
 // const yy: [number, number] = [32, 31];
 
 //== OBJECTS ==//
-
+// const cc: {houseNumber: number; streetName: string;}; // ERROR "Const vars must be initialized"
 /**
  * (11) object types can be expressed using {} and property names
  */
