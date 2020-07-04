@@ -4,10 +4,13 @@ import { HasPhoneNumber, HasEmail } from "./1-basics";
 /**
  * (1) Type aliases allow us to give a type a name
  */
-// type StringOrNumber = string | number;
+type StringOrNumber = string | number;
+let x: StringOrNumber;
+x = "ss";
+x = 1;
 
 // // this is the ONLY time you'll see a type on the RHS of assignment
-// type HasName = { name: string };
+type HasName = { name: string };
 
 // NEW in TS 3.7: Self-referencing types!
 type NumVal = 1 | 2 | 3 | NumVal[];
@@ -17,10 +20,14 @@ type NumVal = 1 | 2 | 3 | NumVal[];
  * (2) Interfaces can extend from other interfaces
  */
 
-// export interface HasInternationalPhoneNumber extends HasPhoneNumber {
-//   countryCode: string;
-// }
-
+export interface HasInternationalPhoneNumber extends HasPhoneNumber {
+  countryCode: string;
+}
+const y: HasInternationalPhoneNumber = {
+  name: "",
+  phone: 12345,
+  countryCode: "+44",
+};
 /**
  * (3) they can also be used to describe call signatures
  */

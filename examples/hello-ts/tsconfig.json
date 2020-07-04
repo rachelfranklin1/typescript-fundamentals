@@ -10,6 +10,7 @@
     "outDir": "lib",
     "jsx": "react",
     // don't allow the type 'any' -- these are wild cards
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "moduleResolution": "classic"
   }
 }

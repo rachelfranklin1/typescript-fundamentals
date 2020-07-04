@@ -71,7 +71,23 @@ contactPeople("email", { name: "foo", email: "" });
 
 // ✅ phone works
 contactPeople("phone", { name: "foo", phone: 12345678 });
+type Murphy = [
+  {
+    temperment: "naughty";
+  }
+];
 
+type Rua = [{ temperment: "Good" }];
+
+function isMurphy(name: "Murphy", ...dogProperties: Murphy);
+function isMurphy(name: "Rua", ...dogProperties: Rua);
+
+function isMurphy(name: "Murphy" | "Rua", ...dogProperties: Murphy | Rua) {
+  console.log(dogProperties);
+}
+
+isMurphy("Murphy", { temperment: "naughty" });
+isMurphy("Rua", { temperment: "Good" });
 // 🚨 mixing does not work
 // contactPeople("email", { name: "foo", phone: 12345678 }); // ERROR: Object literal may only specify known properties, and 'phone' does not exist in type 'HasEmail'.
 

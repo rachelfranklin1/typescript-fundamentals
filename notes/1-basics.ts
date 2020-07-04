@@ -88,6 +88,12 @@ let rachel: "Rachel"; // you can use string literal types on let vars
  */
 // const xx = [32, 31]; // number[];
 // const yy: [number, number] = [32, 31];
+let userAddress: [number, string, string] = [
+  109,
+  "Ballycrochan Road",
+  "Bangor",
+];
+userAddress = [101, "WestferryDrive", "London"];
 
 //== OBJECTS ==//
 // const cc: {houseNumber: number; streetName: string;}; // ERROR "Const vars must be initialized"
